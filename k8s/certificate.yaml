@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+metadata:
+  name: k8s-gferrari-dev-tls
+spec:
+  secretName: k8s-gferrari-dev-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: gferrari.dev
+  dnsNames:
+    - gferrari.dev
+    - k8s.gferrari.dev
+    - www.k8s.gferrari.dev
